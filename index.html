@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Script Hub - Roblox Cheats</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #181a23;
+      --primary: #6fe995;
+      --secondary: #26d0fa;
+      --glass: rgba(36, 39, 56, 0.72);
+      --card-border: #2e3141;
+      --free: #43e47a;
+      --paid: #f94b82;
+    }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+      color: #efefef;
+    }
+    header {
+      width: 100vw;
+      background: linear-gradient(90deg, #181a23 60%, #23272f 100%);
+      padding: 40px 0 20px 0;
+      box-shadow: 0 2px 16px 0 #000a;
+      text-align: center;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      letter-spacing: 3px;
+      color: var(--primary);
+      margin: 0 0 10px 0;
+    }
+    .discord-link {
+      color: var(--secondary);
+      font-size: 1.08rem;
+      text-decoration: none;
+      padding: 4px 16px;
+      border-radius: 25px;
+      background: rgba(111,233,149,0.07);
+      border: 1px solid var(--primary);
+      transition: background .17s, color .17s;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+    .discord-link:hover {
+      background: var(--primary);
+      color: #181a23;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 32px;
+    }
+    nav button {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: transparent;
+      color: #aaa;
+      padding: 16px 50px;
+      border: none;
+      font-size: 1.12rem;
+      cursor: pointer;
+      font-weight: 600;
+      border-bottom: 3px solid transparent;
+      margin: 0 8px;
+      letter-spacing: 0.02em;
+      transition: color .17s, border-color .17s;
+    }
+    nav button.active,
+    nav button:hover {
+      color: var(--primary);
+      border-bottom: 3px solid var(--primary);
+    }
+    main {
+      max-width: 1300px;
+      margin: 32px auto;
+      padding: 0 3vw 48px 3vw;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+      animation: fadeIn .4s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(24px);}
+      to { opacity: 1; transform: none;}
+    }
+    .script-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px;
+      justify-content: center;
+    }
+    .script-card {
+      background: var(--glass);
+      border-radius: 18px;
+      box-shadow: 0 8px 40px #23272f33, 0 2px 16px #191a2444;
+      backdrop-filter: blur(6px);
+      border: 1.5px solid var(--card-border);
+      width: 340px;
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .14s, box-shadow .13s, border-color .14s;
+      padding: 28px 23px 20px 23px;
+      position: relative;
+    }
+    .script-card:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 16px 52px #6fe99529, 0 2px 24px #191a2469;
+      border-color: var(--primary);
+    }
+    .ribbon {
+      position: absolute;
+      top: -12px
