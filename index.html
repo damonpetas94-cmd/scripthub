@@ -4,194 +4,120 @@
   <meta charset="UTF-8">
   <title>Script Hub - Roblox Cheats</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #181a23;
+      --primary: #6fe995;
+      --secondary: #26d0fa;
+      --glass: rgba(36, 39, 56, 0.72);
+      --card-border: #2e3141;
+      --free: #43e47a;
+      --paid: #f94b82;
+    }
     body {
-      background: #171a21;
-      color: #e9e9e9;
-      font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+      color: #efefef;
     }
     header {
-      background: #23272f;
-      padding: 30px 0 20px 0;
-      text-align: center;
+      width: 100vw;
+      background: linear-gradient(90deg, #181a23 60%, #23272f 100%);
+      padding: 40px 0 20px 0;
       box-shadow: 0 2px 16px 0 #000a;
+      text-align: center;
     }
     header h1 {
-      margin: 0;
-      letter-spacing: 2px;
-      font-size: 2.2rem;
-      color: #6fe995;
-      font-weight: bold;
+      font-weight: 700;
+      font-size: 2.5rem;
+      letter-spacing: 3px;
+      color: var(--primary);
+      margin: 0 0 10px 0;
+    }
+    .discord-link {
+      color: var(--secondary);
+      font-size: 1.08rem;
+      text-decoration: none;
+      padding: 4px 16px;
+      border-radius: 25px;
+      background: rgba(111,233,149,0.07);
+      border: 1px solid var(--primary);
+      transition: background .17s, color .17s;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+    .discord-link:hover {
+      background: var(--primary);
+      color: #181a23;
     }
     nav {
       display: flex;
       justify-content: center;
-      margin-top: 20px;
+      margin-top: 32px;
     }
     nav button {
-      background: #23272f;
-      color: #e9e9e9;
-      padding: 12px 40px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: transparent;
+      color: #aaa;
+      padding: 16px 50px;
       border: none;
-      outline: none;
+      font-size: 1.12rem;
       cursor: pointer;
-      font-size: 1.1rem;
+      font-weight: 600;
+      border-bottom: 3px solid transparent;
       margin: 0 8px;
-      border-radius: 5px 5px 0 0;
-      transition: background 0.18s, color 0.18s;
+      letter-spacing: 0.02em;
+      transition: color .17s, border-color .17s;
     }
-    nav button.active, nav button:hover {
-      background: #6fe995;
-      color: #23272f;
-      font-weight: bold;
+    nav button.active,
+    nav button:hover {
+      color: var(--primary);
+      border-bottom: 3px solid var(--primary);
+    }
+    main {
+      max-width: 1300px;
+      margin: 32px auto;
+      padding: 0 3vw 48px 3vw;
     }
     .tab-content {
-      padding: 36px 5vw 48px 5vw;
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+      animation: fadeIn .4s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(24px);}
+      to { opacity: 1; transform: none;}
     }
     .script-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 32px;
+      gap: 36px;
       justify-content: center;
-      margin-top: 8px;
     }
     .script-card {
-      background: #23272f;
-      border-radius: 8px;
-      box-shadow: 0 4px 24px 0 #0005;
-      width: 310px;
-      min-height: 175px;
+      background: var(--glass);
+      border-radius: 18px;
+      box-shadow: 0 8px 40px #23272f33, 0 2px 16px #191a2444;
+      backdrop-filter: blur(6px);
+      border: 1.5px solid var(--card-border);
+      width: 340px;
+      min-height: 210px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 22px 20px 16px 20px;
-      transition: transform 0.16s, box-shadow 0.16s;
+      transition: transform .14s, box-shadow .13s, border-color .14s;
+      padding: 28px 23px 20px 23px;
+      position: relative;
     }
     .script-card:hover {
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 8px 36px #6fe99544, 0 2px 24px #000a;
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 16px 52px #6fe99529, 0 2px 24px #191a2469;
+      border-color: var(--primary);
     }
-    .script-title {
-      font-size: 1.18rem;
-      color: #6fe995;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    .script-desc {
-      font-size: 0.99rem;
-      color: #c9c9c9;
-    }
-    .script-actions {
-      margin-top: 15px;
-      text-align: right;
-    }
-    .download-btn,
-    .buy-btn {
-      appearance: none;
-      border: none;
-      outline: none;
-      color: #fff;
-      font-weight: 600;
-      padding: 9px 24px;
-      border-radius: 4px;
-      background: linear-gradient(90deg, #3de089, #1ea2ff);
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.17s, box-shadow 0.14s, color 0.16s;
-      margin-left: 9px;
-    }
-    .download-btn:hover, .buy-btn:hover {
-      background: linear-gradient(90deg, #1ea2ff, #3de089);
-      color: #171a21;
-    }
-    @media (max-width: 800px) {
-      .script-list {
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-      }
-      .tab-content {
-        padding: 24px 1vw 36px 1vw;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Script Hub</h1>
-    <div style="margin-top:10px;">
-      <a href="https://discord.gg/YOURDISCORDLINK" target="_blank" style="color:#6fe995; text-decoration:none; border-bottom:1px dotted #6fe995;">Join our Discord</a>
-    </div>
-  </header>
-  <nav>
-    <button class="active" onclick="showTab('free')">Free Scripts</button>
-    <button onclick="showTab('paid')">Paid Scripts</button>
-  </nav>
-
-  <section id="free" class="tab-content">
-    <div class="script-list">
-      <!-- Example Free Script -->
-      <div class="script-card">
-        <div>
-          <div class="script-title">Infinite Jump</div>
-          <div class="script-desc">Enables unlimited jumping in any game. Plug & play!</div>
-        </div>
-        <div class="script-actions">
-          <a href="downloads/infinitejump.lua" class="download-btn" download>Download</a>
-        </div>
-      </div>
-
-      <div class="script-card">
-        <div>
-          <div class="script-title">Speed Hack</div>
-          <div class="script-desc">Boosts your walking speed with a single command.</div>
-        </div>
-        <div class="script-actions">
-          <a href="downloads/speedhack.lua" class="download-btn" download>Download</a>
-        </div>
-      </div>
-
-      <!-- Add more free scripts here -->
-    </div>
-  </section>
-
-  <section id="paid" class="tab-content" style="display:none;">
-    <div class="script-list">
-      <!-- Example Paid Script -->
-      <div class="script-card">
-        <div>
-          <div class="script-title">Auto Farm Pro</div>
-          <div class="script-desc">Automatically farms resources, supports several games. Includes anti-detection features.</div>
-        </div>
-        <div class="script-actions">
-          <a href="https://sellix.io/yourstore/yourproductid" class="buy-btn" target="_blank">Buy Now</a>
-        </div>
-      </div>
-
-      <div class="script-card">
-        <div>
-          <div class="script-title">ESP & Aimbot Suite</div>
-          <div class="script-desc">Wallhacks and aimbot for the latest Roblox shooters. Regularly updated.</div>
-        </div>
-        <div class="script-actions">
-          <a href="https://sellix.io/yourstore/yourproductid" class="buy-btn" target="_blank">Buy Now</a>
-        </div>
-      </div>
-
-      <!-- Add more paid scripts here -->
-    </div>
-  </section>
-
-  <script>
-    function showTab(tab) {
-      document.getElementById('free').style.display = tab === 'free' ? '' : 'none';
-      document.getElementById('paid').style.display = tab === 'paid' ? '' : 'none';
-      document.querySelectorAll("nav button").forEach((btn, i) => {
-        btn.classList.toggle("active", (tab === 'free' && i===0) || (tab === 'paid' && i===1));
-      });
-    }
-  </script>
-</body>
-</html>
+    .ribbon {
+      position: absolute;
+      top: -12px
